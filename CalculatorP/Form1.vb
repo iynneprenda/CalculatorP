@@ -4,6 +4,8 @@
     Dim secondnum As Decimal
     Dim operation As Integer
     Dim Operator_selector As Boolean = False
+    Dim int As Integer = 0
+    Dim doub As Double = 0
 
     Private Sub Label_Click(sender As Object, e As EventArgs) Handles Label.Click
 
@@ -168,23 +170,41 @@
     End Sub
 
     Private Sub Erasebutton_Click(sender As Object, e As EventArgs) Handles Erasebutton.Click
+        Dim _input As String = Label.Text
+        If _input = "" Then
 
+        Else
+            Dim _output As String = _input.Remove(_input.Length - 1, 1)
+            Label.Text = _output
+
+        End If
     End Sub
 
     Private Sub cancel1_Click(sender As Object, e As EventArgs) Handles cancel1.Click
-
-
+        Label.Text = ""
+        Label1.Text = ""
+        int = 0
+        doub = 0
     End Sub
 
     Private Sub cancel2_Click(sender As Object, e As EventArgs) Handles cancel2.Click
-
+        Label.Text = ""
     End Sub
 
     Private Sub percent_Click(sender As Object, e As EventArgs) Handles percent.Click
+        If Label.Text <> "0" Then
+            Label.Text += "%"
+        Else
+            Label.Text = "%"
 
+        End If
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
 End Class
